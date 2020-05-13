@@ -37,10 +37,12 @@ public class HelloWorldClient {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        HelloWorldClient client = new HelloWorldClient("127.0.0.1",50051);
+        //HelloWorldClient client = new HelloWorldClient("127.0.0.1",50051);
         //HelloWorldClient client = new HelloWorldClient("datastream102.jd.163.org",50051);
         //HelloWorldClient client = new HelloWorldClient("datastream102.jd.163.org",10000);
         //HelloWorldClient client = new HelloWorldClient("139.129.92.227",10000);
+        HelloWorldClient client = new HelloWorldClient("139.129.92.227",10000);
+        //HelloWorldClient client = new HelloWorldClient("datastream100.jd.163.org",10002);
         for(int i=0;i<1000000000;i++){
             client.greet("world:"+i);
             Thread.sleep(100);
