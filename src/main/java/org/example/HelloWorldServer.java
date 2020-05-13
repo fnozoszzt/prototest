@@ -2,6 +2,7 @@ package org.example;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
+import io.grpc.protobuf.services.ProtoReflectionService;
 import org.example.GreeterGrpc;
 import org.example.HelloReply;
 import org.example.HelloRequest;
@@ -18,6 +19,7 @@ public class HelloWorldServer {
     private void start() throws IOException {
         server = ServerBuilder.forPort(port)
                 .addService(new GreeterImpl())
+                .addService(ProtoReflectionService.newInstance())
                 .build()
                 .start();
 
