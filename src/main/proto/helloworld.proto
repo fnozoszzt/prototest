@@ -19,11 +19,18 @@ option java_outer_classname = "HelloWorldProto";
 option objc_class_prefix = "HLW";
 
 package helloworld;
+import "google/api/annotations.proto";
 
 // The greeting service definition.
 service Greeter {
   // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
+  rpc SayHello (HelloRequest) returns (HelloReply) {
+    // http option
+    option (google.api.http) = {
+      get: "/example/echo"
+      //body: "*"
+    };
+  }
 }
 
 // The request message containing the user's name.
