@@ -26,10 +26,10 @@ service Greeter {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply) {
     // http option
-    option (google.api.http) = {
+    //option (google.api.http) = {
       //get: "/example/echo"
       //body: "*"
-    };
+    //};
   }
 }
 
